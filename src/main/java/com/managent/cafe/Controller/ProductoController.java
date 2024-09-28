@@ -36,6 +36,7 @@ public class ProductoController {
         return proService.listaProducto();
     }
 
+    //Prueba
     @PostMapping("/registraProducto")
     @ResponseBody
     public ResponseEntity<Map<String, Object>> insertaProducto(@RequestBody Producto obj) {
