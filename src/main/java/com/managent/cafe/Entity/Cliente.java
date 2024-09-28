@@ -11,12 +11,9 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCliente;
 
-    @Column(nullable = false, length = 100)
     private String nombreCliente;
 
-    @Column(length = 100)
     private String emailCliente;
 
-    @Column(length = 20)
     private String telefonoCliente;
 }

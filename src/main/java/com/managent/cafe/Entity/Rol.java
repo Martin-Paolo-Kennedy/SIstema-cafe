@@ -9,8 +9,7 @@ import lombok.Data;
 public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idRol;
+    private Integer idRol;
 
-    @Column(nullable = false, length = 50)
     private String nombre;
 }

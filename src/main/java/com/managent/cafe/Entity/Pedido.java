@@ -13,11 +13,9 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPedido;
 
-    @Column(nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaPedido;
 
-    @Column(nullable = false, precision = 10, scale = 2)
     private Double total;
 
     @ManyToOne

@@ -9,20 +9,15 @@ import lombok.Data;
 public class Proveedor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idProveedor;
+    private Integer idProveedor;
 
-    @Column(nullable = false, length = 100)
     private String nombreProveedor;
 
-    @Column(length = 100)
     private String contacto;
 
-    @Column(length = 255)
     private String direccion;
 
-    @Column(length = 100)
     private String ciudad;
 
-    @Column(length = 20)
     private String telefono;
 }

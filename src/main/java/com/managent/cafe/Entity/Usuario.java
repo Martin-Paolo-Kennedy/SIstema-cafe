@@ -9,15 +9,12 @@ import lombok.Data;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idUsuario;
+    private Integer idUsuario;
 
-    @Column(nullable = false, length = 50)
     private String nombreUsuario;
 
-    @Column(nullable = false, unique = true, length = 100)
     private String email;
 
-    @Column(nullable = false, length = 100)
     private String password;
 
     @ManyToOne

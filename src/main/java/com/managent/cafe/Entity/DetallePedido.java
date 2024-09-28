@@ -11,10 +11,8 @@ public class DetallePedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idDetallePedido;
 
-    @Column(nullable = false)
     private Integer cantidad;
 
-    @Column(nullable = false, precision = 10, scale = 2)
     private Double precio;
 
     @ManyToOne
