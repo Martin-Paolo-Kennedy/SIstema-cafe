@@ -1,9 +1,7 @@
 package com.managent.cafe.Controller;
 
 import com.managent.cafe.Entity.Categoria;
-import com.managent.cafe.Entity.Producto;
 import com.managent.cafe.Service.CategoriaService;
-import com.managent.cafe.Service.ProductoService;
 import com.managent.cafe.Util.AppSettings;
 import com.managent.cafe.Util.Constantes;
 import org.springframework.beans.factory.annotation.Autowired;

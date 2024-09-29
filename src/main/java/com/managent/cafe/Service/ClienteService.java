@@ -1,6 +1,5 @@
 package com.managent.cafe.Service;
 
-import com.managent.cafe.Entity.Categoria;
 import com.managent.cafe.Entity.Cliente;
 
 import java.util.List;

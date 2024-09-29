@@ -1,6 +1,5 @@
 package com.managent.cafe.Controller;
 
-import com.managent.cafe.Entity.Categoria;
 import com.managent.cafe.Entity.Cliente;
 import com.managent.cafe.Service.ClienteService;
 import com.managent.cafe.Util.AppSettings;

@@ -24,7 +24,7 @@ import com.managent.cafe.Service.ProductoService;
 
 
 @RestController
-@RequestMapping
+@RequestMapping("/url/producto")
 @CrossOrigin(origins = AppSettings.URL_CROSS_ORIGIN)
 public class ProductoController {
 	@Autowired
@@ -36,6 +36,7 @@ public class ProductoController {
         return proService.listaProducto();
     }
 
+    //Prueba
     @PostMapping("/registraProducto")
     @ResponseBody
     public ResponseEntity<Map<String, Object>> insertaProducto(@RequestBody Producto obj) {
