@@ -30,7 +30,6 @@ public class CategoriaController {
     public ResponseEntity<Map<String, Object>> insertaCategoria(@RequestBody Categoria obj) {
         Map<String, Object> salida = new HashMap<>();
         try {
-            obj.setIdCategoria(0);
             Categoria objSalida =  catService.insertaActualizaCategoria(obj);
             if (objSalida == null) {
                 salida.put("mensaje", Constantes.MENSAJE_REG_ERROR);

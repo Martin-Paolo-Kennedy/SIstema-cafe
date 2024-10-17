@@ -33,7 +33,6 @@ public class ProveedorController {
     public ResponseEntity<Map<String, Object>> insertaProveedor(@RequestBody Proveedor obj) {
         Map<String, Object> salida = new HashMap<>();
         try {
-            obj.setIdProveedor(0);
             Proveedor objSalida =  provService.insertaActualizaProveedor(obj);
             if (objSalida == null) {
                 salida.put("mensaje", Constantes.MENSAJE_REG_ERROR);

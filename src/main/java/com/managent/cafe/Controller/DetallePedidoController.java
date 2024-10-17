@@ -1,7 +1,9 @@
 package com.managent.cafe.Controller;
 
-import com.managent.cafe.Entity.Cliente;
-import com.managent.cafe.Service.ClienteService;
+import com.managent.cafe.Entity.Categoria;
+import com.managent.cafe.Entity.DetallePedido;
+import com.managent.cafe.Service.CategoriaService;
+import com.managent.cafe.Service.DetallePedidoService;
 import com.managent.cafe.Util.AppSettings;
 import com.managent.cafe.Util.Constantes;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,26 +15,24 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/url/cliente")
+@RequestMapping("/url/pedidoDetalle")
 @CrossOrigin(origins = AppSettings.URL_CROSS_ORIGIN)
-public class ClienteController {
+public class DetallePedidoController {
     @Autowired
-    private ClienteService cliService;
+    private DetallePedidoService detpedService;
 
     @GetMapping
     @ResponseBody
-    public List<Cliente> listaCliente() {
-        List<Cliente> clientes = cliService.listaCliente();
-        System.out.println(clientes); // Para verificar lo que devuelve
-        return clientes;
+    public List<DetallePedido> listaPedidoDetalle() {
+        return detpedService.listaDetallePedido();
     }
 
-    @PostMapping("/registraCliente")
+    @PostMapping("/registraPedidoDetalle")
     @ResponseBody
-    public ResponseEntity<Map<String, Object>> insertaCliente(@RequestBody Cliente obj) {
+    public ResponseEntity<Map<String, Object>> insertaPedidoDetalle(@RequestBody DetallePedido obj) {
         Map<String, Object> salida = new HashMap<>();
         try {
-            Cliente objSalida =  cliService.insertaActualizaCliente(obj);
+            DetallePedido objSalida =  detpedService.insertaActualizaDetallePedido(obj);
             if (objSalida == null) {
                 salida.put("mensaje", Constantes.MENSAJE_REG_ERROR);
             } else {
@@ -45,12 +45,12 @@ public class ClienteController {
         return ResponseEntity.ok(salida);
     }
 
-    @PutMapping("/actualizaCliente")
+    @PutMapping("/actualizaPedidoDetalle")
     @ResponseBody
-    public ResponseEntity<Map<String, Object>> actualizaCliente(@RequestBody Cliente obj) {
+    public ResponseEntity<Map<String, Object>> actualizaPedidoDetalle(@RequestBody DetallePedido obj) {
         Map<String, Object> salida = new HashMap<>();
         try {
-            Cliente objSalida =  cliService.insertaActualizaCliente(obj);
+            DetallePedido objSalida =  detpedService.insertaActualizaDetallePedido(obj);
             if (objSalida == null) {
                 salida.put("mensaje", Constantes.MENSAJE_ACT_ERROR);
             } else {
@@ -63,12 +63,12 @@ public class ClienteController {
         return ResponseEntity.ok(salida);
     }
 
-    @DeleteMapping("/eliminaCliente/{id}")
+    @DeleteMapping("/eliminaPedidoDetalle/{id}")
     @ResponseBody
-    public ResponseEntity<Map<String, Object>> eliminaCliente(@PathVariable("id") int idCliente) {
+    public ResponseEntity<Map<String, Object>> eliminaPedidoDetalle(@PathVariable("id") int idDetallePedido) {
         Map<String, Object> salida = new HashMap<>();
         try {
-            cliService.eliminaCliente(idCliente);
+            detpedService.eliminaDetallePedido(idDetallePedido);
             salida.put("mensaje", Constantes.MENSAJE_ELI_EXITOSO);
         } catch (Exception e) {
             e.printStackTrace();

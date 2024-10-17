@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.managent.cafe.Entity.Categoria;
+import com.managent.cafe.Entity.Proveedor;
 import com.managent.cafe.Util.AppSettings;
 import com.managent.cafe.Util.Constantes;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +44,7 @@ public class ProductoController {
     public ResponseEntity<Map<String, Object>> insertaProducto(@RequestBody Producto obj) {
         Map<String, Object> salida = new HashMap<>();
         try {
-            obj.setIdProducto(0);
+
             Producto objSalida =  proService.insertaActualizaProducto(obj);
             if (objSalida == null) {
                 salida.put("mensaje", Constantes.MENSAJE_REG_ERROR);

@@ -11,7 +11,7 @@ import java.util.Date;
 public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idPedido;
+    private Integer idPedido;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaPedido;
